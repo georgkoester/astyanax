@@ -2,14 +2,22 @@
 ext.githubProjectName = rootProject.name // Change if github project name is not the same as the root project's name
 
 buildscript {
-    repositories { mavenCentral() }
+    repositories { 
+ mavenCentral();
+ }
+
     apply from: file('gradle/buildscript.gradle'), to: buildscript 
 }
 
 allprojects {
-    repositories { mavenCentral() }
+    repositories { 
+mavenCentral() ;
+}
 }
 
+apply plugin: 'checkstyle'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
 apply from: file('gradle/convention.gradle')
 apply from: file('gradle/maven.gradle')
 apply from: file('gradle/check.gradle')
